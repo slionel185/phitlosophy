@@ -20,7 +20,7 @@ export default function HomePage() {
                     All in one <span className='text-primary'>personal</span> training services.
                 </h1>
                 <p className='mt-5 max-w-prose text-muted-foreground sm:text-lg'>
-                If you're looking to get in shape with some help from friends, then you need Phitlosophy's Personal Training Team! With our team of experts by your side, you'll be able to achieve your fitness goals in no time. So what are you waiting for?
+                If you&apos;re looking to get in shape with some help from friends, then you need Phitlosophy&apos;s Personal Training Team! With our team of experts by your side, you&apos;ll be able to achieve your fitness goals in no time. So what are you waiting for?
                 </p>
                 <div className='mt-8'>
                     <Link href={'https://cal.com/sethtorrence/consult-call'} target='_blank' className={buttonVariants({
