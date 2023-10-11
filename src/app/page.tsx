@@ -1,113 +1,106 @@
+import Link from 'next/link'
 import Image from 'next/image'
+import { ArrowRight, Calendar, Phone } from 'lucide-react'
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+import Navbar from '@/components/nav/Navbar'
+import { Button, buttonVariants } from '@/components/ui/button'
+import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+export default function HomePage() {
+    return (
+        <>
+            <Navbar />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            <MaxWidthContainer className='mb-12 mt-20 sm:mt-40 flex flex-col justify-center items-center text-center bg-background'>
+                <div className='mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border bg-white px-7 py-2 shadow-md backdrop-blue transition-all hover:bg-white/50'>
+                    <p className='text-sm font-semibold text-gray-900'>Phitlosophy coming soon!</p>
+                </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                <h1 className='max-w-4xl text-5xl font-bold md:text-6xl text-foreground lg:text-7xl'>
+                    All in one <span className='text-primary'>personal</span> training services.
+                </h1>
+                <p className='mt-5 max-w-prose text-muted-foreground sm:text-lg'>
+                If you're looking to get in shape with some help from friends, then you need Phitlosophy's Personal Training Team! With our team of experts by your side, you'll be able to achieve your fitness goals in no time. So what are you waiting for?
+                </p>
+                <div className='mt-8'>
+                    <Link href={'https://cal.com/sethtorrence/consult-call'} target='_blank' className={buttonVariants({
+                        variant: 'default',
+                        size: 'lg'
+                    })}>
+                        Book a call <Phone className='ml-2 h-5 w-5' />
+                    </Link>
+                </div>
+            </MaxWidthContainer>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <div>
+                <div className='relative isolate'>
+                    <div>
+                        <div className='mx-auto max-w-6xl px-6 lg:px-8'>
+                            <div className='mt-16 flow-root sm:mt-24'>
+                                <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
+                                    <Image className='rounded-md bg-background p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-foreground/10' quality={100} src={''} alt={'Picture of Rich/Jamie giving queues'} width={1364} height={866} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className='mx-auto mb-32 mt-32 max-w-5xl sm:mt-56'>
+                <div className='mb-12 px-6 lg:px-8'>
+                    <div className='mx-auto max-w-2xl sm:text-center'>
+                        <h2 className='mt-2 font-bold text-4xl text-foreground sm:text-5xl'>Book your consultation now</h2>
+                        <p className='mt-4 text-lg text-muted-foreground'>Getting on track with your fitness goals has never been easier.</p>
+                    </div>
+                </div>
+
+                <ol className='my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0'>
+                    <li className='md:flex-1'>
+                        <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
+                            <span className='text-sm font-medium text-primary'>Step 1</span>
+                            <span className='text-xl font-semibold'>Book your consultation</span>
+                            <span className='mt-2 text-muted-foreground'>Fill out our contact form or book through our Cal links now!</span>
+                        </div>
+                    </li>
+
+                    <li className='md:flex-1'>
+                        <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
+                            <span className='text-sm font-medium text-primary'>Step 2</span>
+                            <span className='text-xl font-semibold'>Pick your plan</span>
+                            <span className='mt-2 text-muted-foreground'>After we meet and discuss potential options, pick what suits you best.</span>
+                        </div>
+                    </li>
+
+                    <li className='md:flex-1'>
+                        <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
+                            <span className='text-sm font-medium text-primary'>Step 3</span>
+                            <span className='text-xl font-semibold'>Kick A**</span>
+                            <span className='mt-2 text-muted-foreground'>Now we put the plan into action and crush your goals!</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <div className='mx-auto flex flex-col lg:flex-row w-2/3 mt-24 justify-center items-center gap-4 lg:gap-8'>
+                        <Link href={'https://cal.com/sethtorrence/consult-session'} target='_blank' className={`w-full ${buttonVariants({
+                            variant: 'default',
+                            size: 'lg'
+                        })}`}>
+                            Book with Rich <Calendar className='ml-2 h-5 w-5' />
+                        </Link>
+
+                        <div className='border rounded-full flex justify-center items-center p-2 lg:p-8'>
+                            <h1>OR</h1>
+                        </div>
+
+                        <Link href={'https://cal.com/sethtorrence/consult-call'} target='_blank' className={`w-full ${buttonVariants({
+                            variant: 'default',
+                            size: 'lg'
+                        })}`}>
+                            Book with Jamie <Calendar className='ml-2 h-5 w-5' />
+                        </Link>
+                </div>
+            </div>
+        </>
+    )
 }

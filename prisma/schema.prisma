@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Exercise {
+  id              String         @id @default(cuid())
+  name            String
+  decsription     String
+  video           String?
+  equipment       String?
+  target          ExerciseTarget
+  level           ExerciseLevel
+  rest_time       Int?
+  workout_plan_id String
+  WorkoutPlan     WorkoutPlan    @relation(fields: [workout_plan_id], references: [id])
+  Set             Set[]
+}
+
+model Prospect {
+  id      String  @id @default(cuid())
+  name    String
+  email   String  @unique
+  phone   String
+  message String?
+}
+
+model Set {
+  id          String     @id
+  weight_type WeightType
+  reps        Int
+  weight      Int
+  exercise_id String
+  Exercise    Exercise   @relation(fields: [exercise_id], references: [id])
+}
+
+model User {
+  id                                    String        @id @default(cuid())
+  email                                 String        @unique
+  image                                 String?
+  username                              String        @unique
+  password                              String
+  type                                  UserType      @default(MEMBER)
+  created_at                            DateTime      @default(now())
+  updated_at                            DateTime      @default(now())
+  WorkoutPlan_WorkoutPlan_user_idToUser WorkoutPlan[] @relation("WorkoutPlan_user_idToUser")
+  WorkoutPlan_Assigned                  WorkoutPlan[] @relation("Assigned")
+}
+
+model WorkoutPlan {
+  id                             String           @id @default(cuid())
+  name                           String
+  description                    String
+  target                         ExerciseTarget[]
+  user_id                        String
+  Exercise                       Exercise[]
+  User_WorkoutPlan_user_idToUser User             @relation("WorkoutPlan_user_idToUser", fields: [user_id], references: [id])
+  User_Assigned                  User[]           @relation("Assigned")
+}
+
+enum ExerciseLevel {
+  Beginner
+  Intermediate
+  Advanced
+}
+
+enum ExerciseTarget {
+  Abs
+  Forearms
+  Biceps
+  Triceps
+  Shoulders
+  Back
+  Chest
+  Quadriceps
+  Hamstrings
+  Calves
+}
+
+enum UserType {
+  MEMBER
+  EMPLOYEE
+}
+
+enum WeightType {
+  KILOGRAMS
+  POUNDS
+}
