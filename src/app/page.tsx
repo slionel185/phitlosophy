@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Calendar, Phone } from 'lucide-react'
+import { Calendar, Phone } from 'lucide-react'
 
 import Navbar from '@/components/nav/Navbar'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
+
+import DoubleFlex from '@/assets/landing/double_flex.png'
 
 export default function HomePage() {
     return (
@@ -39,7 +41,7 @@ export default function HomePage() {
                         <div className='mx-auto max-w-6xl px-6 lg:px-8'>
                             <div className='mt-16 flow-root sm:mt-24'>
                                 <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                                    <Image className='rounded-md bg-background p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-foreground/10' quality={100} src={''} alt={'Picture of Rich/Jamie giving queues'} width={1364} height={866} />
+                                    <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={DoubleFlex} alt={'Picture of Rich/Jamie giving queues'} width={3024} height={1903} />
                                 </div>
                             </div>
                         </div>
