@@ -34,7 +34,7 @@ export default function ContactForm() {
     
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-2 max-w-lg mx-auto'>
+            <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-2 max-w-lg mx-auto px-4 lg:px-0'>
                 <FormField control={form.control} name='name' render={({ field }) => (
                     <FormItem>
                         <FormLabel>Name</FormLabel>
