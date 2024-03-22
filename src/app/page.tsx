@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
 
 import DoubleFlex from '@/assets/landing/double_flex.png'
+import ContactForm from '@/components/forms/ContactForm'
 
 export default function HomePage() {
     return (
@@ -25,7 +26,7 @@ export default function HomePage() {
                 If you&apos;re looking to get in shape with some help from friends, then you need Phitlosophy&apos;s Personal Training Team! With our team of experts by your side, you&apos;ll be able to achieve your fitness goals in no time. So what are you waiting for?
                 </p>
                 <div className='mt-8'>
-                    <Link href={'https://cal.com/sethtorrence/consult-call'} target='_blank' className={buttonVariants({
+                    <Link href={'#ContactForm'} className={buttonVariants({
                         variant: 'default',
                         size: 'lg'
                     })}>
@@ -57,7 +58,7 @@ export default function HomePage() {
                     </div>
                 </div>
 
-                <ol className='my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0'>
+                <ol className='my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0 mb-32'>
                     <li className='md:flex-1'>
                         <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
                             <span className='text-sm font-medium text-primary'>Step 1</span>
@@ -83,24 +84,8 @@ export default function HomePage() {
                     </li>
                 </ol>
 
-                <div className='mx-auto flex flex-col lg:flex-row w-2/3 mt-24 justify-center items-center gap-4 lg:gap-8'>
-                        <Link href={'https://cal.com/sethtorrence/consult-session'} target='_blank' className={`w-full ${buttonVariants({
-                            variant: 'default',
-                            size: 'lg'
-                        })}`}>
-                            Book with Rich <Calendar className='ml-2 h-5 w-5' />
-                        </Link>
-
-                        <div className='border rounded-full flex justify-center items-center p-2 lg:p-8'>
-                            <h1>OR</h1>
-                        </div>
-
-                        <Link href={'https://cal.com/sethtorrence/consult-call'} target='_blank' className={`w-full ${buttonVariants({
-                            variant: 'default',
-                            size: 'lg'
-                        })}`}>
-                            Book with Jamie <Calendar className='ml-2 h-5 w-5' />
-                        </Link>
+                <div id='ContactForm'>
+                    <ContactForm />
                 </div>
             </div>
         </>
